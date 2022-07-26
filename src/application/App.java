@@ -3,10 +3,10 @@ package application;
 public class App {
 
 	public static void main(String[] args) {
-		Database db = null;
+		//Database db = null;
 		
-		try {
-			db = new Database("db");
+		try(Database db = new Database(null)) {
+			//db = new Database("db");
 			db.getData();
 			/*Constructors don't have any return type, but they can
 			 * throw exceptions
@@ -22,12 +22,17 @@ public class App {
  * getData throws an exception.  Do this by moving db.close() into
  * a finally block
  */
-		finally {
+/*		finally {
 			try {
 				db.close();
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-		}
+			}
+			Can get rid of all of this using try with resources
+			Can only use try with resources if it is used with
+			a class that implements the AutoCloseable interface
+			*/
+		
 	}
 }

@@ -31,7 +31,7 @@ public class Database implements AutoCloseable {
 		System.out.println("Closing connection....");
 		
 		
-		if(connectionString == null) {
+		if(connectionString.length() < 5) {
 			throw new Exception("Cannot close connection to " + connectionString);
 		}
 		
