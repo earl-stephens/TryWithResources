@@ -5,7 +5,7 @@ public class App {
 	public static void main(String[] args) {
 		//Database db = null;
 		
-		try(Database db = new Database(null)) {
+		try(Database db = new Database("db")) {
 			//db = new Database("db");
 			db.getData();
 			/*Constructors don't have any return type, but they can
